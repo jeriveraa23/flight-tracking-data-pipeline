@@ -1,0 +1,18 @@
+name: 'flights_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'flights_db_profile'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+
+models:
+  flights_dbt:
+    staging:
+      +materialized: table
+      +schema: staging
+    
+    marts:
+      +materialized: table
+      +schema: analytics

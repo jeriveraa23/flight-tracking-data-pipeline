@@ -1,0 +1,21 @@
+# Pytho
+__pycache__/
+*.py[cod]
+venv/
+.env
+.venv/
+.vscode/
+
+
+# IDEs
+.idea/
+
+# dbt
+logs/
+/flights_dbt/target/
+/flights_dbt/dbt_packages/
+/flights_dbt/logs/
+flights_dbt/.user.yml
+
+# Docker DB
+postgres_data/

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+# PostgreSQL Service
+  postgres_db:
+    image: postgres:15
+    container_name: postgres_flight
+    environment:
+      POSTGRES_USER: admin_flight
+      POSTGRES_PASSWORD: flight_202*
+      POSTGRES_DB: flight_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+#Airflow Service
+  airflow:
+    image: apache/airflow:2.7.1
+    container_name: airflow_flight
+    depends_on:
+      - postgres_db
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://admin_flight:flight_202*@postgres_db/flight_db
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - _PIP_ADDITIONAL_PYTHON_PACKAGES=pandas requests sqlalchemy psycopg2-binary dbt-postgres dbt-core
+    volumes:
+      - ../dags:/opt/airflow/dags
+      - ../src:/opt/airflow/src
+      - ../flights_dbt:/opt/airflow/flights_dbt
+      - ../logs:/opt/airflow/logs
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "
+      pip install dbt-core dbt-postgres && 
+      dbt deps --project-dir /opt/airflow/flights_dbt --profiles-dir /opt/airflow/flights_dbt && 
+      airflow standalone"
+
+volumes:
+  postgres_data:

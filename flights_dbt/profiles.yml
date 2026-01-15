@@ -1,0 +1,12 @@
+flights_db_profile:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres_db
+      user: admin_flight
+      password: flight_202*
+      port: 5432
+      dbname: flight_db
+      schema: public
+      threads: 1

@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fct_flights
+    description: "Final Table"
+    columns:
+      - name: flight_id
+        description: "Unique flight identifier"
+        tests:
+          - not_null
+      
+      - name: aircraft_id
+        description: "ICAO24 code"
+        tests:
+          - not_null
+
+      - name: speed_kmh
+        description: "Calculated speed in km/h"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+              severity: warn
+      
+      - name: latitude
+        description: "Accept latitude ranges"
+        tests: 
+          - dbt_utils.accepted_range:
+              min_value: -90
+              max_value: 90
+          
+      - name: longitude
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: -180
+              max_value: 180
+

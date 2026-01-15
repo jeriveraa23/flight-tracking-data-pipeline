@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: api_data
+    schema: public
+    tables:
+      - name: flights_history  # OpenSky table
+      - name: aircraft_info    # HexDB table
+      
