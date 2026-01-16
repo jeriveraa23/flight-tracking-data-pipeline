@@ -40,17 +40,21 @@ The project uses **Docker Compose** to orchestrate the environment in isolated c
 
 The Power BI report provides answers to key operational questions:
 
-* **Airline Popularity Ranking**: Analysis of the most active carriers within the monitored airspace.
-* **Traffic Peak Analysis**: Identification of the busiest hours of operation during the day.
-* **Fleet Distribution**: Comparison of aircraft manufacturers and registration origins.
-* **Flight Dynamics**: Correlation between altitude, speed, and vertical rate.
-* **Safety Monitoring**: Real-time tracking of Squawk codes and emergency status.
+* **RealTime Operation Overview**: High-level tracking of unique routes, maximum recorded speeds (up to 982.8 km/h), and altitude thresholds (reaching 13.72 mil meters).
+* **Peak Traffic Hours**: Time-series analysis identifying the highest density of flights, showing significant activity peaks around 02:00 and 17:00.
+* **Vertical Status Analysis**: Breakdown of aircraft distribution by flight phase (Ascending, Descending, and Level Flight) to monitor regional traffic flow.
+* **Flight Performance Profile**: Scatter plot correlation between Average Speed (km/h) and Barometric Altitude, revealing the aerodynamic efficiency of the fleet.
+* **Geographical Fleet Distribution**: Ranking of unique aircraft by manufacturer and country of registration, highlighting major contributions from the United States, Colombia, and Chile.
+* 
+
+<img width="1413" height="795" alt="Insights P2" src="https://github.com/user-attachments/assets/c091b767-6211-47be-b72f-dae9a13a2b83" />
+
 
 ---
 
 ### Project Architecture
 
-[Insert Architecture Diagram Here]
+![Arquitecture Diagram Project 2](https://github.com/user-attachments/assets/0d55152c-b848-4e0b-a24b-bde243c9708c)
 
 ---
 
