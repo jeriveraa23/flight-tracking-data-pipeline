@@ -22,7 +22,7 @@ The project uses **Docker Compose** to orchestrate the environment in isolated c
 
 * **Apache Airflow Container**: Orchestrates the Python extraction scripts and manages the scheduling of the entire ELT workflow.
 * **PostgreSQL Container**: Serves as the centralized Data Warehouse where raw data is stored and then transformed.
-* **dbt (Data Build Tool)**: The core of the transformation layer. It handles the SQL logic to convert raw records into validated, business-ready models.
+* **dbt (Data Build Tool)**: Integrated into the workflow as the transformation engine. It handles the SQL logic to convert raw records into business-ready models and executes data quality tests.
 
 ---
 
