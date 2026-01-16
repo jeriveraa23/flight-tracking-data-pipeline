@@ -62,4 +62,4 @@ The Power BI report provides answers to key operational questions:
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/jeriveraa23/flight-tracking-pipeline.git](https://github.com/jeriveraa23/flight-tracking-pipeline.git)
+   git clone https://github.com/jeriveraa23/flight-tracking-data-pipeline.git
